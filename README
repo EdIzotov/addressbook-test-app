@@ -1,0 +1,17 @@
+BUILD:
+docker build -t abook .
+
+
+
+RUN:
+docker run -it -p 8080:80 -e ALLOW_OVERRIDE=None abook
+
+IMPORT DATABASE:
+docker exec -it ID /bin/bash
+
+mysql < /var/www/html/addressbook.sql
+
+
+
+ACCESS:
+http://localhost:8080/
