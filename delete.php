@@ -6,12 +6,12 @@
 	echo '<h1>Delete record</h1>';
 
 	$sql="SELECT * FROM $base_from_where AND $table.id=$id";
-	$result = mysql_query($sql);
-	$resultsnumber = mysql_numrows($result);
+	$result = mysqli_query($db, $sql);
+	$resultsnumber = mysqli_num_rows($result);
 
 	if($resultsnumber > 0) {
-		mysql_query("DELETE FROM $table_grp_adr WHERE id='$id'",$db);
-		mysql_query("DELETE FROM $table         WHERE id='$id'",$db);
+		mysqli_query($db, "DELETE FROM $table_grp_adr WHERE id='$id'");
+		mysqli_query($db, "DELETE FROM $table         WHERE id='$id'");
 		echo "<br /><div class='msgbox'>Record has been deleted from the address book.<br /><i>return to <a href='index.php'>home page</a></i></div>";
 	} else {
 		echo "<br /><div class='msgbox'>Invalid record, sorry but the record no longer exsists<br /><i>return to <a href='index.php'>home page</a></i></div>";	

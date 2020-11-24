@@ -25,8 +25,8 @@ $base_from_where AND $table.bmonth = $month_lookup.bmonth
 ORDER BY prio ASC";
 
 	
-	$result = mysql_query($sql);
-	$resultsnumber = mysql_numrows($result);
+	$result = mysqli_query($db, $sql);
+	$resultsnumber = mysqli_num_rows($result);
 
 	echo "<table id='birthdays'>";
 	$tablespace = 0;
@@ -36,7 +36,7 @@ ORDER BY prio ASC";
 	include ("include/guess.inc.php");
 
 	$lastmonth = '';
-	while ($myrow = mysql_fetch_array($result))
+	while ($myrow = mysqli_fetch_array($result))
 	{
 
 		$firstname = $myrow["firstname"];
