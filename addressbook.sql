@@ -5,9 +5,9 @@
 --   parameter is set in "config.php".
 --
 
-CREATE DATABASE addressbook;
+-- CREATE DATABASE addressbook;
 
-GRANT ALL PRIVILEGES on addressbook.* to 'addressbook'@'localhost' IDENTIFIED BY 'asdffdsA1';
+-- GRANT ALL PRIVILEGES on addressbook.* to 'addressbook'@'localhost' IDENTIFIED BY 'asdffdsA1';
 
 USE addressbook;
 
