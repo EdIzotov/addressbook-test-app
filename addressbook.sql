@@ -9,7 +9,7 @@
 
 -- GRANT ALL PRIVILEGES on addressbook.* to 'addressbook'@'localhost' IDENTIFIED BY 'asdffdsA1';
 
-USE addressbook;
+-- USE addressbook;
 
 CREATE TABLE addressbook (
    id int(9) unsigned NOT NULL auto_increment,
