@@ -1,18 +1,9 @@
-FROM fauria/lamp:latest
+FROM mattrayner/lamp:latest-1604
 
+COPY --chown=www-data:www-data ./ /var/www/html/
 
-RUN apt-get update
-#RUN apt-get install -y wget
-#RUN cd /var/www/html && wget -O addressbook.zip https://www.dropbox.com/s/k8kju2nb0lyk06g/addressbook.zip?dl=0
-#RUN apt-get install -y unzip
-#RUN cd /var/www/html && unzip -o /var/www/html/addressbook.zip
-#RUN rm /etc/apt/preferences.d/no-debian-php
-#RUN apt-get install -y php7.3-mysqli
-#RUN apt-get install -y nano
+#RUN ["mysql", "<", "/var/www/html/init.sql"]
+#CMD ["mysql", "-u", "addressbook", "-pasdffdsA1", "-D", "addressbook", "<", "/var/www/html/addressbook.sql"]
+#RUN mysql -u addressbook -pasdffdsA1 -D addressbook < /var/www/html/addressbook.sql
 
-COPY --chown=www-data:www-data ./addressbook/ /var/www/html/
-#CMD ["mysql", "<", "/var/www/html/addressbook.sql"]
-
-#CMD ["apache2", "-D",  "FOREGROUND"]
-
-#EXPOSE 8080:80
+EXPOSE 80:80
